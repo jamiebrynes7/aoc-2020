@@ -1,16 +1,8 @@
-use std::{
-    fs::File,
-    io::{BufRead, BufReader},
-};
-
 use anyhow::{Context, Result};
+use aoc_2020::input_lines;
 
 fn main() -> Result<()> {
-    let file = File::open("./src/input/day01.txt")?;
-    let reader = BufReader::new(file);
-    let input = reader
-        .lines()
-        .into_iter()
+    let input = input_lines(1)?
         .map(|line| {
             line.context("Failed to read line")?
                 .parse::<i64>()

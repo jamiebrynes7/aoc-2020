@@ -1,19 +1,11 @@
-use std::{
-    fs::File,
-    io::{BufRead, BufReader},
-    str::FromStr,
-};
-
 use anyhow::{Context, Result};
+use aoc_2020::input_lines;
 use lazy_static::lazy_static;
 use regex::Regex;
+use std::str::FromStr;
 
 fn main() -> Result<()> {
-    let file = File::open("./src/input/day02.txt")?;
-    let reader = BufReader::new(file);
-    let input = reader
-        .lines()
-        .into_iter()
+    let input = input_lines(2)?
         .map(|line| {
             let line = line.context("Failed to read line")?;
             Policy::from_str(&line)
