@@ -1,8 +1,6 @@
-use std::{ops::Range, str::FromStr};
-
-use aoc_2020::input_lines;
-
 use anyhow::{Context, Result};
+use aoc_2020::input_lines;
+use std::{ops::Range, str::FromStr};
 
 fn main() -> Result<()> {
     let input = input_lines(5)?
